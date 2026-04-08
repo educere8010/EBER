@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>에바연 | 교과 기반 탐구활동의 구조를 설계합니다</title>
-<meta name="description" content="에듀케레 바른교육연구소 - 학생부종합전형의 본질을 이해하고, 교과 기반 탐구활동을 체계적으로 설계합니다. 계열별 300종 탐구자료, 생기부 분석, 교과세특 설계.">
+<meta name="description" content="에듀케레 바른교육연구소 - 학생부종합전형의 본질을 이해하고, 교과 기반 탐구활동을 체계적으로 설계합니다.">
 <meta property="og:title" content="에바연 - 탐구는 구조에서 시작됩니다">
 <meta property="og:description" content="교과 기반 탐구활동 자료부터 생기부 분석까지. 학생부종합전형 준비의 새로운 기준.">
 <meta property="og:type" content="website">
@@ -18,18 +18,18 @@
 :root {
   --navy: #1B3A5C;
   --navy-dark: #122842;
-  --blue: #2E75B6;
-  --blue-light: #4A9BE8;
-  --blue-pale: #E8F1FB;
+  --gold: #C5963A;
+  --gold-light: #D4A853;
+  --gold-pale: #F9F3E8;
   --bg: #FFFFFF;
-  --bg-gray: #F5F7FA;
-  --bg-dark: #F0F2F5;
+  --bg-warm: #FAF8F3;
+  --bg-cream: #F3EDE0;
   --text-primary: #1A1A2E;
   --text-secondary: #4A5568;
   --text-light: #718096;
-  --border: #E2E8F0;
+  --border: #E8E2D6;
+  --border-light: #EDE5D4;
   --success: #38A169;
-  --accent: #D4A853;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
   --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
@@ -39,49 +39,35 @@
 }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
 body {
   font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text-primary);
-  background: var(--bg);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  color: var(--text-primary); background: var(--bg);
+  line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased;
 }
 
-/* ── Navigation ── */
+/* ── Nav ── */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s;
 }
 .nav.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm); }
 .nav-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   height: 68px; display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo {
-  display: flex; flex-direction: column; text-decoration: none; gap: 1px;
-}
-.nav-logo-main {
-  font-size: 1.35rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px;
-}
-.nav-logo-sub {
-  font-size: 0.7rem; color: var(--text-light); font-weight: 400; letter-spacing: 0.5px;
-}
-.nav-links {
-  display: flex; align-items: center; gap: 28px; list-style: none;
-}
+.nav-logo { display: flex; flex-direction: column; text-decoration: none; gap: 1px; }
+.nav-logo-main { font-size: 1.35rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
+.nav-logo-sub { font-size: 0.7rem; color: var(--text-light); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
   text-decoration: none; color: var(--text-secondary);
   font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--navy); }
 .nav-cta {
-  background: var(--blue); color: #fff !important;
+  background: var(--gold); color: #fff !important;
   padding: 9px 22px; border-radius: 8px;
   font-weight: 600 !important; transition: background 0.2s, transform 0.2s !important;
 }
@@ -91,12 +77,12 @@ body {
 }
 .nav-mobile-toggle svg { width: 24px; height: 24px; stroke: var(--navy); }
 
-/* ── Section Commons ── */
+/* ── Section ── */
 .section { padding: 100px 24px; }
 .container { max-width: 1200px; margin: 0 auto; }
 .section-label {
   display: inline-block; font-size: 0.8rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 2px; color: var(--blue); margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 12px;
 }
 .section-title {
   font-size: 2.4rem; font-weight: 800; line-height: 1.3;
@@ -114,18 +100,18 @@ body {
 /* ── Hero ── */
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  background: linear-gradient(165deg, #F8FAFF 0%, #EDF2FA 40%, #E4ECF7 100%);
+  background: linear-gradient(165deg, #FEFCF8 0%, #FAF8F3 40%, #F3EDE0 100%);
   position: relative; overflow: hidden; padding-top: 68px;
 }
 .hero::before {
   content: ''; position: absolute; top: -200px; right: -200px;
   width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(46,117,182,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197,150,58,0.06) 0%, transparent 70%);
 }
 .hero::after {
   content: ''; position: absolute; bottom: -100px; left: -100px;
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(27,58,92,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(27,58,92,0.04) 0%, transparent 70%);
 }
 .hero .container {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
@@ -133,7 +119,7 @@ body {
 .hero-content { position: relative; z-index: 1; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(46,117,182,0.1); color: var(--blue);
+  background: rgba(197,150,58,0.12); color: var(--gold);
   padding: 6px 16px; border-radius: 100px;
   font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;
 }
@@ -142,11 +128,11 @@ body {
   color: var(--navy); margin-bottom: 20px; letter-spacing: -1px;
 }
 .hero h1 em {
-  font-style: normal; color: var(--blue); position: relative;
+  font-style: normal; color: var(--gold); position: relative;
 }
 .hero h1 em::after {
   content: ''; position: absolute; bottom: 2px; left: 0; right: 0;
-  height: 8px; background: rgba(46,117,182,0.15); border-radius: 4px; z-index: -1;
+  height: 8px; background: rgba(197,150,58,0.18); border-radius: 4px; z-index: -1;
 }
 .hero-sub {
   font-size: 1.1rem; color: var(--text-secondary);
@@ -155,11 +141,11 @@ body {
 .hero-buttons { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--blue); color: #fff; padding: 16px 32px;
+  background: var(--gold); color: #fff; padding: 16px 32px;
   border-radius: 12px; text-decoration: none; font-size: 1.05rem; font-weight: 700;
   border: none; cursor: pointer;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 14px rgba(46,117,182,0.3);
+  box-shadow: 0 4px 14px rgba(197,150,58,0.3);
 }
 .btn-primary:hover {
   background: var(--navy); transform: translateY(-2px);
@@ -171,18 +157,16 @@ body {
   border-radius: 12px; text-decoration: none; font-size: 1rem; font-weight: 600;
   border: 2px solid var(--border); transition: border-color 0.2s, background 0.2s;
 }
-.btn-secondary:hover { border-color: var(--blue); background: var(--blue-pale); }
+.btn-secondary:hover { border-color: var(--gold); background: var(--gold-pale); }
 .hero-stats {
   display: flex; gap: 32px; margin-top: 48px;
   padding-top: 32px; border-top: 1px solid var(--border);
 }
 .hero-stat { text-align: left; }
-.hero-stat strong {
-  display: block; font-size: 1.6rem; font-weight: 800; color: var(--navy);
-}
+.hero-stat strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--navy); }
 .hero-stat span { font-size: 0.85rem; color: var(--text-light); }
 
-/* Hero visual */
+/* Hero Visual */
 .hero-visual { position: relative; z-index: 1; }
 .hero-card {
   background: #fff; border-radius: 20px; box-shadow: var(--shadow-xl);
@@ -190,11 +174,11 @@ body {
 }
 .hero-card-header {
   display: flex; align-items: center; gap: 14px;
-  margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+  margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light);
 }
 .hero-card-icon {
   width: 48px; height: 48px; border-radius: 14px;
-  background: linear-gradient(135deg, var(--blue), var(--navy));
+  background: linear-gradient(135deg, var(--gold), var(--navy));
   display: flex; align-items: center; justify-content: center;
   color: #fff; font-weight: 800; font-size: 1.1rem;
 }
@@ -203,12 +187,12 @@ body {
 .hero-card-items { display: flex; flex-direction: column; gap: 14px; }
 .hero-card-item {
   display: flex; align-items: flex-start; gap: 12px;
-  padding: 14px 16px; background: var(--bg-gray); border-radius: 12px;
+  padding: 14px 16px; background: var(--bg-warm); border-radius: 12px;
   font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;
 }
 .hero-card-item-num {
   width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
-  background: var(--blue-pale); color: var(--blue);
+  background: rgba(197,150,58,0.12); color: var(--gold);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.75rem; font-weight: 800;
 }
@@ -219,55 +203,49 @@ body {
   font-size: 0.82rem; animation: float 3s ease-in-out infinite;
 }
 .hero-float-1 { top: -18px; right: -18px; color: var(--success); font-weight: 700; }
-.hero-float-2 { bottom: -14px; left: -14px; color: var(--blue); font-weight: 600; }
+.hero-float-2 { bottom: -14px; left: -14px; color: var(--gold); font-weight: 600; }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
-/* ── Pain Section ── */
+/* ── Pain ── */
 .pain { background: var(--bg); }
 .pain-header { text-align: center; margin-bottom: 60px; }
 .pain-header .section-desc { margin: 0 auto; }
 .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .pain-card {
-  background: var(--bg-gray); border-radius: var(--radius-lg);
+  background: var(--bg-warm); border-radius: var(--radius-lg);
   padding: 36px 28px; text-align: center;
   transition: transform 0.3s, box-shadow 0.3s; border: 1px solid transparent;
 }
-.pain-card:hover {
-  transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border);
-}
+.pain-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border); }
 .pain-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
-.pain-card h3 {
-  font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 10px;
-}
+.pain-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .pain-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
 
 /* ── Philosophy ── */
-.philosophy { background: var(--bg-gray); }
+.philosophy { background: var(--bg-warm); }
 .philosophy-header { text-align: center; margin-bottom: 64px; }
 .philosophy-header .section-desc { margin: 0 auto; }
 .philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .philosophy-card {
   background: #fff; border-radius: var(--radius-lg);
   padding: 40px 32px; position: relative; overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--border-light);
 }
 .philosophy-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .philosophy-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--navy));
+  background: linear-gradient(90deg, var(--gold), var(--navy));
 }
 .phil-num {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; background: var(--blue-pale);
-  color: var(--blue); border-radius: 10px;
+  width: 40px; height: 40px; background: rgba(197,150,58,0.1);
+  color: var(--gold); border-radius: 10px;
   font-size: 0.9rem; font-weight: 800; margin-bottom: 20px;
 }
-.philosophy-card h3 {
-  font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;
-}
+.philosophy-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
 .philosophy-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
 
 /* ── Services ── */
@@ -275,7 +253,7 @@ body {
 .services-header { margin-bottom: 60px; }
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .service-card {
-  background: var(--bg-gray); border: 1px solid var(--border);
+  background: var(--bg-warm); border: 1px solid var(--border-light);
   border-radius: var(--radius-lg); padding: 32px 24px;
   text-align: center; transition: transform 0.3s, box-shadow 0.3s;
   display: flex; flex-direction: column; position: relative;
@@ -287,31 +265,26 @@ body {
 .service-card.featured .service-desc { color: rgba(255,255,255,0.7); }
 .service-card.featured h3,
 .service-card.featured .service-price { color: #fff; }
-.service-card.featured .service-link { color: var(--blue-light); }
+.service-card.featured .service-link { color: var(--gold-light); }
 .service-step {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
-  color: var(--blue); margin-bottom: 8px;
+  color: var(--gold); margin-bottom: 8px;
 }
-.service-card h3 {
-  font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 4px;
-}
+.service-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
 .service-subtitle { font-size: 0.85rem; color: var(--text-light); margin-bottom: 14px; }
 .service-badge {
   display: inline-block; padding: 3px 12px; border-radius: 20px;
   font-size: 0.72rem; font-weight: 700; margin-bottom: 14px; align-self: center;
 }
 .badge-free { background: #d1fae5; color: #065f46; }
-.badge-best { background: #dbeafe; color: #1e40af; }
-.badge-popular { background: #fef3c7; color: #92400e; }
-.badge-premium { background: rgba(212,168,83,0.2); color: #92400e; }
-.service-card.featured .badge-premium { background: var(--accent); color: var(--navy-dark); }
+.badge-best { background: rgba(197,150,58,0.15); color: #8B6914; }
+.badge-popular { background: #dbeafe; color: #1e40af; }
+.badge-premium { background: var(--gold); color: #fff; }
 .service-desc {
   font-size: 0.88rem; color: var(--text-secondary);
   line-height: 1.7; margin-bottom: 20px; flex: 1;
 }
-.service-price {
-  font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 16px;
-}
+.service-price { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
 .service-price .unit { font-size: 0.85rem; font-weight: 500; }
 .service-price .from {
   font-size: 0.78rem; font-weight: 400; color: var(--text-light);
@@ -320,88 +293,69 @@ body {
 .service-card.featured .service-price .from { color: rgba(255,255,255,0.5); }
 .service-link {
   display: inline-flex; align-items: center; gap: 6px;
-  color: var(--blue); font-weight: 600; font-size: 0.9rem;
+  color: var(--gold); font-weight: 600; font-size: 0.9rem;
   text-decoration: none; transition: gap 0.3s;
 }
 .service-link:hover { gap: 12px; }
 
 /* ── Comparison ── */
 .comparison { background: var(--navy-dark); color: #fff; }
-.comparison .section-label { color: var(--blue-light); }
+.comparison .section-label { color: var(--gold-light); }
 .comparison .section-title { color: #fff; }
 .comparison .section-desc { color: rgba(255,255,255,0.6); }
 .comparison-table {
   margin-top: 48px; width: 100%; border-collapse: separate; border-spacing: 0;
-  overflow: hidden; border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.04);
+  overflow: hidden; border-radius: var(--radius-lg); background: rgba(255,255,255,0.04);
 }
-.comparison-table th, .comparison-table td {
-  padding: 18px 24px; text-align: left; font-size: 0.92rem;
-}
+.comparison-table th, .comparison-table td { padding: 18px 24px; text-align: left; font-size: 0.92rem; }
 .comparison-table thead th {
   background: rgba(255,255,255,0.06); font-weight: 700;
   color: rgba(255,255,255,0.4); font-size: 0.78rem;
   text-transform: uppercase; letter-spacing: 1px;
 }
-.comparison-table thead th:last-child { color: var(--blue-light); }
-.comparison-table tbody td {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.65);
-}
-.comparison-table tbody td:first-child {
-  font-weight: 600; color: rgba(255,255,255,0.85);
-}
-.comparison-table tbody td:last-child { color: var(--blue-light); font-weight: 600; }
+.comparison-table thead th:last-child { color: var(--gold-light); }
+.comparison-table tbody td { border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); }
+.comparison-table tbody td:first-child { font-weight: 600; color: rgba(255,255,255,0.85); }
+.comparison-table tbody td:last-child { color: var(--gold-light); font-weight: 600; }
 .comparison-table tbody tr:last-child td { border-bottom: none; }
-.ck { color: var(--blue-light); font-weight: bold; margin-right: 4px; }
+.ck { color: var(--gold-light); font-weight: bold; margin-right: 4px; }
 .xx { color: #FC8181; margin-right: 4px; }
 
 /* ── Structure ── */
-.structure { background: var(--bg-gray); }
+.structure { background: var(--bg-warm); }
 .structure-header { text-align: center; margin-bottom: 56px; }
 .structure-header .section-desc { margin: 0 auto; }
 .structure-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .structure-item {
-  background: #fff; border: 1px solid var(--border);
+  background: #fff; border: 1px solid var(--border-light);
   border-radius: var(--radius); padding: 28px 22px;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-.structure-item:hover {
-  transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue);
-}
+.structure-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--gold); }
 .structure-num {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; background: var(--blue); color: #fff;
+  width: 34px; height: 34px; background: var(--navy); color: #fff;
   border-radius: 8px; font-size: 0.8rem; font-weight: 800; margin-bottom: 14px;
 }
-.structure-item h4 {
-  font-size: 0.95rem; font-weight: 700; color: var(--navy);
-  margin-bottom: 8px; line-height: 1.4;
-}
+.structure-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
 .structure-item p { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
 
 /* ── Value ── */
 .value { background: var(--bg); }
-.value-layout {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-}
+.value-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .value-content .section-title { margin-bottom: 24px; }
-.value-text {
-  font-size: 1rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 36px;
-}
+.value-text { font-size: 1rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 36px; }
 .value-points { display: flex; flex-direction: column; gap: 20px; }
 .value-point { display: flex; gap: 16px; align-items: flex-start; }
 .value-point-icon {
   width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-  background: var(--blue-pale); display: flex; align-items: center;
+  background: rgba(197,150,58,0.1); display: flex; align-items: center;
   justify-content: center; font-size: 1.2rem;
 }
-.value-point h4 {
-  font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px;
-}
+.value-point h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
 .value-point p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
 .value-visual {
-  background: linear-gradient(160deg, #EDF2FA, #E4ECF7);
+  background: linear-gradient(160deg, #FAF8F3, #F3EDE0);
   border-radius: var(--radius-lg); padding: 48px 36px;
   display: flex; flex-direction: column; gap: 20px;
 }
@@ -413,14 +367,14 @@ body {
   width: 48px; height: 48px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
 }
-.value-stat-icon.blue { background: var(--blue-pale); }
+.value-stat-icon.gold { background: rgba(197,150,58,0.1); }
 .value-stat-icon.green { background: #d1fae5; }
-.value-stat-icon.amber { background: #fef3c7; }
+.value-stat-icon.navy { background: rgba(27,58,92,0.08); }
 .value-stat-num { font-size: 1.4rem; font-weight: 800; color: var(--navy); }
 .value-stat-label { font-size: 0.82rem; color: var(--text-light); }
 
 /* ── Reviews ── */
-.reviews { background: var(--bg-gray); }
+.reviews { background: var(--bg-warm); }
 .reviews-header {
   display: flex; align-items: flex-end; justify-content: space-between;
   flex-wrap: wrap; gap: 24px; margin-bottom: 48px;
@@ -431,12 +385,12 @@ body {
 .review-stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 6px; }
 .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .review-card {
-  background: #fff; border: 1px solid var(--border);
+  background: #fff; border: 1px solid var(--border-light);
   border-radius: var(--radius-lg); padding: 28px 24px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.review-stars { color: #F6AD55; font-size: 0.9rem; margin-bottom: 14px; letter-spacing: 2px; }
+.review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; letter-spacing: 2px; }
 .review-text {
   font-size: 0.9rem; color: var(--text-primary); line-height: 1.75;
   margin-bottom: 20px; font-style: italic;
@@ -444,7 +398,7 @@ body {
 .review-author { display: flex; align-items: center; gap: 12px; }
 .review-avatar {
   width: 38px; height: 38px;
-  background: linear-gradient(135deg, var(--blue), var(--navy));
+  background: linear-gradient(135deg, var(--gold), var(--navy));
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   color: #fff; font-weight: 700; font-size: 0.85rem;
 }
@@ -456,10 +410,10 @@ body {
 .faq-header { text-align: center; margin-bottom: 48px; }
 .faq-list { max-width: 760px; margin: 0 auto; }
 .faq-item {
-  border: 1px solid var(--border); border-radius: var(--radius);
+  border: 1px solid var(--border-light); border-radius: var(--radius);
   margin-bottom: 12px; overflow: hidden; transition: border-color 0.3s;
 }
-.faq-item:hover { border-color: var(--blue); }
+.faq-item:hover { border-color: var(--gold); }
 .faq-question {
   width: 100%; padding: 20px 24px; display: flex; align-items: center;
   justify-content: space-between; background: none; border: none;
@@ -467,56 +421,39 @@ body {
   text-align: left; font-family: 'Noto Sans KR', sans-serif; gap: 16px;
 }
 .faq-toggle {
-  width: 28px; height: 28px; background: var(--bg-gray); border-radius: 50%;
+  width: 28px; height: 28px; background: var(--bg-warm); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; color: var(--blue); transition: all 0.3s; flex-shrink: 0;
+  font-size: 1.1rem; color: var(--gold); transition: all 0.3s; flex-shrink: 0;
 }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.faq-answer-inner {
-  padding: 0 24px 20px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8;
-}
+.faq-answer-inner { padding: 0 24px 20px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8; }
 .faq-item.active .faq-answer { max-height: 300px; }
-.faq-item.active .faq-toggle {
-  transform: rotate(45deg); background: var(--blue); color: #fff;
-}
+.faq-item.active .faq-toggle { transform: rotate(45deg); background: var(--gold); color: #fff; }
 
 /* ── Final CTA ── */
 .final-cta {
-  background: linear-gradient(165deg, #F8FAFF 0%, #EDF2FA 50%, #E4ECF7 100%);
-  text-align: center; padding: 100px 24px; position: relative;
+  background: linear-gradient(165deg, #FEFCF8 0%, #FAF8F3 50%, #F3EDE0 100%);
+  text-align: center; padding: 100px 24px;
 }
 .final-cta-inner { max-width: 620px; margin: 0 auto; }
-.final-cta h2 {
-  font-size: 2.2rem; font-weight: 800; color: var(--navy);
-  line-height: 1.35; margin-bottom: 16px;
-}
-.final-cta p {
-  font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 36px;
-}
+.final-cta h2 { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1.35; margin-bottom: 16px; }
+.final-cta p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 36px; }
 .final-cta .btn-primary { font-size: 1.1rem; padding: 18px 40px; }
 .final-cta-url { margin-top: 16px; font-size: 0.85rem; color: var(--text-light); }
 
 /* ── Footer ── */
-.footer {
-  background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 48px 24px;
-}
+.footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 48px 24px; }
 .footer-inner {
   max-width: 1200px; margin: 0 auto; display: flex;
-  justify-content: space-between; align-items: flex-start;
-  flex-wrap: wrap; gap: 32px;
+  justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px;
 }
-.footer-brand .footer-logo {
-  font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 4px;
-}
-.footer-brand .footer-logo-sub {
-  font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;
-}
+.footer-brand .footer-logo { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.footer-brand .footer-logo-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
 .footer-info { font-size: 0.78rem; line-height: 2; color: rgba(255,255,255,0.45); }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 .footer-links a {
   color: rgba(255,255,255,0.5); text-decoration: none;
-  font-size: 0.82rem; transition: color 0.2s;
-  display: flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; transition: color 0.2s; display: flex; align-items: center; gap: 6px;
 }
 .footer-links a:hover { color: #fff; }
 .footer-copyright {
@@ -524,7 +461,7 @@ body {
   border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.75rem;
 }
 
-/* ── Floating CTA ── */
+/* ── Floating ── */
 .floating-cta {
   position: fixed; bottom: 24px; right: 24px; z-index: 999;
   display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
@@ -537,7 +474,7 @@ body {
 }
 .floating-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-xl); }
 .floating-btn.kakao { background: #FEE500; color: #3C1E1E; }
-.floating-btn.shop { background: var(--blue); color: #fff; }
+.floating-btn.shop { background: var(--gold); color: #fff; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
@@ -556,11 +493,8 @@ body {
   .section { padding: 70px 20px; }
   .section-title { font-size: 1.8rem; }
   .hero h1 { font-size: 2.2rem; }
-  .pain-grid { grid-template-columns: 1fr; }
-  .philosophy-grid { grid-template-columns: 1fr; }
-  .service-grid { grid-template-columns: 1fr; }
+  .pain-grid, .philosophy-grid, .service-grid, .review-grid { grid-template-columns: 1fr; }
   .structure-grid { grid-template-columns: repeat(2, 1fr); }
-  .review-grid { grid-template-columns: 1fr; }
   .comparison-table { display: block; overflow-x: auto; }
   .nav-links { display: none; }
   .nav-mobile-toggle { display: block; }
@@ -590,7 +524,7 @@ body {
       <li><a href="#reviews">후기</a></li>
       <li><a href="https://www.educereedu.com" target="_blank" class="nav-cta">자료 보러가기</a></li>
     </ul>
-    <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="메뉴">
+    <button class="nav-mobile-toggle" aria-label="메뉴">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
@@ -627,29 +561,17 @@ body {
           </div>
         </div>
         <div class="hero-card-items">
-          <div class="hero-card-item">
-            <div class="hero-card-item-num">01</div>
-            <div><strong>주제 개요</strong> &#8212; 교과서 단원 연결 탐구 방향</div>
-          </div>
-          <div class="hero-card-item">
-            <div class="hero-card-item-num">02</div>
-            <div><strong>연구 설계</strong> &#8212; 설문·실험·비교 분석 방법론</div>
-          </div>
-          <div class="hero-card-item">
-            <div class="hero-card-item-num">03</div>
-            <div><strong>예시 보고서</strong> &#8212; 제출 가능 수준의 보고서</div>
-          </div>
-          <div class="hero-card-item">
-            <div class="hero-card-item-num">04</div>
-            <div><strong>학생부 기재</strong> &#8212; 동기&#8594;과정&#8594;결과&#8594;느낀점</div>
-          </div>
+          <div class="hero-card-item"><div class="hero-card-item-num">01</div><div><strong>주제 개요</strong> &#8212; 교과서 단원 연결 탐구 방향</div></div>
+          <div class="hero-card-item"><div class="hero-card-item-num">02</div><div><strong>연구 설계</strong> &#8212; 설문·실험·비교 분석 방법론</div></div>
+          <div class="hero-card-item"><div class="hero-card-item-num">03</div><div><strong>예시 보고서</strong> &#8212; 제출 가능 수준의 보고서</div></div>
+          <div class="hero-card-item"><div class="hero-card-item-num">04</div><div><strong>학생부 기재</strong> &#8212; 동기&#8594;과정&#8594;결과&#8594;느낀점</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAIN POINTS -->
+<!-- PAIN -->
 <section class="section pain" id="pain">
   <div class="container fade-in">
     <div class="pain-header">
@@ -658,21 +580,9 @@ body {
       <p class="section-desc">혼자서는 해결하기 어려운, 학생부종합전형 준비의 핵심 난관들입니다.</p>
     </div>
     <div class="pain-grid">
-      <div class="pain-card">
-        <span class="pain-icon">&#128552;</span>
-        <h3>탐구 주제를 못 정하겠다</h3>
-        <p>관심 분야는 있지만, 교과와 연결해 탐구 주제를 구체화하는 과정이 막막합니다.</p>
-      </div>
-      <div class="pain-card">
-        <span class="pain-icon">&#128221;</span>
-        <h3>세특을 어떻게 써야 할지 모르겠다</h3>
-        <p>수업 시간에 활동은 했는데, 이걸 어떤 방향으로 정리해야 할지 감이 잡히지 않습니다.</p>
-      </div>
-      <div class="pain-card">
-        <span class="pain-icon">&#128269;</span>
-        <h3>생기부가 잘 되고 있는지 모르겠다</h3>
-        <p>지금 쌓고 있는 내용이 입시에서 의미 있게 읽힐지 확인할 방법이 없습니다.</p>
-      </div>
+      <div class="pain-card"><span class="pain-icon">&#128552;</span><h3>탐구 주제를 못 정하겠다</h3><p>관심 분야는 있지만, 교과와 연결해 탐구 주제를 구체화하는 과정이 막막합니다.</p></div>
+      <div class="pain-card"><span class="pain-icon">&#128221;</span><h3>세특을 어떻게 써야 할지 모르겠다</h3><p>수업 시간에 활동은 했는데, 이걸 어떤 방향으로 정리해야 할지 감이 잡히지 않습니다.</p></div>
+      <div class="pain-card"><span class="pain-icon">&#128269;</span><h3>생기부가 잘 되고 있는지 모르겠다</h3><p>지금 쌓고 있는 내용이 입시에서 의미 있게 읽힐지 확인할 방법이 없습니다.</p></div>
     </div>
   </div>
 </section>
@@ -686,21 +596,9 @@ body {
       <p class="section-desc">에바연은 세 가지 원칙을 바탕으로 탐구활동을 설계합니다.</p>
     </div>
     <div class="philosophy-grid">
-      <div class="philosophy-card">
-        <div class="phil-num">01</div>
-        <h3>탐구활동은 교과에서 시작된다</h3>
-        <p>특별한 소재가 아니라, 수업 속 개념을 깊이 있게 확장하는 것이 진정한 탐구입니다.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="phil-num">02</div>
-        <h3>학생부는 설계가 필요하다</h3>
-        <p>기록은 쌓이는 것이 아니라, 방향을 갖고 구성되어야 입시에서 의미를 가집니다.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="phil-num">03</div>
-        <h3>고1 준비가 가장 중요하다</h3>
-        <p>3년의 학생부를 관통하는 흐름은 1학년 때의 기초 설계에서 결정됩니다.</p>
-      </div>
+      <div class="philosophy-card"><div class="phil-num">01</div><h3>탐구활동은 교과에서 시작된다</h3><p>특별한 소재가 아니라, 수업 속 개념을 깊이 있게 확장하는 것이 진정한 탐구입니다.</p></div>
+      <div class="philosophy-card"><div class="phil-num">02</div><h3>학생부는 설계가 필요하다</h3><p>기록은 쌓이는 것이 아니라, 방향을 갖고 구성되어야 입시에서 의미를 가집니다.</p></div>
+      <div class="philosophy-card"><div class="phil-num">03</div><h3>고1 준비가 가장 중요하다</h3><p>3년의 학생부를 관통하는 흐름은 1학년 때의 기초 설계에서 결정됩니다.</p></div>
     </div>
   </div>
 </section>
@@ -715,36 +613,28 @@ body {
     </div>
     <div class="service-grid">
       <div class="service-card">
-        <div class="service-step">STEP 01</div>
-        <h3>도서 자료</h3>
-        <div class="service-subtitle">무료로 시작하기</div>
+        <div class="service-step">STEP 01</div><h3>도서 자료</h3><div class="service-subtitle">무료로 시작하기</div>
         <span class="service-badge badge-free">FREE</span>
         <p class="service-desc">핵심요약 + 교과연결 + 탐구질문이 담긴 도서자료를 무료로 받아보세요.</p>
-        <div class="service-price" style="color: var(--success);">무료</div>
+        <div class="service-price" style="color:var(--success);">무료</div>
         <a href="https://www.educereedu.com" class="service-link" target="_blank">자료 받기 &#8594;</a>
       </div>
       <div class="service-card">
-        <div class="service-step">STEP 02</div>
-        <h3>탐구활동 자료</h3>
-        <div class="service-subtitle">계열별 300종</div>
+        <div class="service-step">STEP 02</div><h3>탐구활동 자료</h3><div class="service-subtitle">계열별 300종</div>
         <span class="service-badge badge-best">BEST</span>
         <p class="service-desc">탐구 주제부터 예시 보고서, 학생부 기재 방향까지. 바로 활용 가능한 구조형 자료.</p>
         <div class="service-price"><span class="from">1종 기준</span>14,900<span class="unit">원</span></div>
         <a href="https://www.educereedu.com" class="service-link" target="_blank">자료 보기 &#8594;</a>
       </div>
       <div class="service-card">
-        <div class="service-step">STEP 03</div>
-        <h3>교과세특 설계</h3>
-        <div class="service-subtitle">방향 설계</div>
+        <div class="service-step">STEP 03</div><h3>교과세특 설계</h3><div class="service-subtitle">방향 설계</div>
         <span class="service-badge badge-popular">인기</span>
         <p class="service-desc">교과목과 진로를 연결하는 세특 방향과 탐구 구조 설계. 학년별 로드맵 포함.</p>
         <div class="service-price"><span class="from">설계 기준</span>79,000<span class="unit">원~</span></div>
         <a href="https://www.educereedu.com" class="service-link" target="_blank">자세히 보기 &#8594;</a>
       </div>
       <div class="service-card featured">
-        <div class="service-step">STEP 04</div>
-        <h3>생기부 분석</h3>
-        <div class="service-subtitle">1:1 전략 설계</div>
+        <div class="service-step">STEP 04</div><h3>생기부 분석</h3><div class="service-subtitle">1:1 전략 설계</div>
         <span class="service-badge badge-premium">PREMIUM</span>
         <p class="service-desc">학생부를 학종 평가 기준으로 정밀 분석하고, 입시 전략 보고서를 제공합니다.</p>
         <div class="service-price"><span class="from">분석 기준</span>99,000<span class="unit">원~</span></div>
@@ -761,9 +651,7 @@ body {
     <div class="section-title">일반 자료와 무엇이 다른가요?</div>
     <p class="section-desc">에바연은 단순한 자료가 아니라, 세특에 남는 탐구 구조를 제공합니다.</p>
     <table class="comparison-table">
-      <thead>
-        <tr><th>항목</th><th>일반 자료</th><th>에바연</th></tr>
-      </thead>
+      <thead><tr><th>항목</th><th>일반 자료</th><th>에바연</th></tr></thead>
       <tbody>
         <tr><td>주제의 깊이</td><td><span class="xx">&#10005;</span> 제안 수준에서 마무리</td><td><span class="ck">&#10003;</span> 보고서 구조까지 완성</td></tr>
         <tr><td>교과 연계성</td><td><span class="xx">&#10005;</span> 교과와 연결 모호</td><td><span class="ck">&#10003;</span> 교과서 단원 직접 연결</td></tr>
@@ -776,7 +664,7 @@ body {
   </div>
 </section>
 
-<!-- 8-STEP STRUCTURE -->
+<!-- STRUCTURE -->
 <section class="section structure" id="structure">
   <div class="container fade-in">
     <div class="structure-header">
@@ -806,33 +694,15 @@ body {
         <div class="section-title">고가의 컨설팅 비용이<br>없어도 괜찮습니다</div>
         <p class="value-text">컨설턴트를 대면하지 않고도 구조화된 자료로 학생부종합전형의 본질을 파악할 수 있습니다. 자신의 페이스에 맞춰 자유롭게 학습하고 준비하세요.</p>
         <div class="value-points">
-          <div class="value-point">
-            <div class="value-point-icon">&#128161;</div>
-            <div><h4>스스로 사고력을 기르는 기회</h4><p>수행평가와 탐구보고서를 위해 자료를 활용하며 사고력을 증진시킬 수 있습니다.</p></div>
-          </div>
-          <div class="value-point">
-            <div class="value-point-icon">&#128218;</div>
-            <div><h4>자기주도적 준비</h4><p>선행학습처럼, 탐구활동도 구조화된 자료로 미리 준비할 수 있습니다.</p></div>
-          </div>
-          <div class="value-point">
-            <div class="value-point-icon">&#127919;</div>
-            <div><h4>비용 절감 이상의 가치</h4><p>에바연은 단순한 비용 절감을 넘어, 학생의 주체적 성장을 돕습니다.</p></div>
-          </div>
+          <div class="value-point"><div class="value-point-icon">&#128161;</div><div><h4>스스로 사고력을 기르는 기회</h4><p>수행평가와 탐구보고서를 위해 자료를 활용하며 사고력을 증진시킬 수 있습니다.</p></div></div>
+          <div class="value-point"><div class="value-point-icon">&#128218;</div><div><h4>자기주도적 준비</h4><p>선행학습처럼, 탐구활동도 구조화된 자료로 미리 준비할 수 있습니다.</p></div></div>
+          <div class="value-point"><div class="value-point-icon">&#127919;</div><div><h4>비용 절감 이상의 가치</h4><p>에바연은 단순한 비용 절감을 넘어, 학생의 주체적 성장을 돕습니다.</p></div></div>
         </div>
       </div>
       <div class="value-visual">
-        <div class="value-stat-card">
-          <div class="value-stat-icon blue">&#128202;</div>
-          <div><div class="value-stat-num">4.97 / 5.0</div><div class="value-stat-label">평균 만족도</div></div>
-        </div>
-        <div class="value-stat-card">
-          <div class="value-stat-icon green">&#128260;</div>
-          <div><div class="value-stat-num">98%</div><div class="value-stat-label">재구매 의향</div></div>
-        </div>
-        <div class="value-stat-card">
-          <div class="value-stat-icon amber">&#128106;</div>
-          <div><div class="value-stat-num">500+</div><div class="value-stat-label">누적 이용 가정</div></div>
-        </div>
+        <div class="value-stat-card"><div class="value-stat-icon gold">&#128202;</div><div><div class="value-stat-num">4.97 / 5.0</div><div class="value-stat-label">평균 만족도</div></div></div>
+        <div class="value-stat-card"><div class="value-stat-icon green">&#128260;</div><div><div class="value-stat-num">98%</div><div class="value-stat-label">재구매 의향</div></div></div>
+        <div class="value-stat-card"><div class="value-stat-icon navy">&#128106;</div><div><div class="value-stat-num">500+</div><div class="value-stat-label">누적 이용 가정</div></div></div>
       </div>
     </div>
   </div>
@@ -896,30 +766,12 @@ body {
       <div class="section-title">자주 묻는 질문</div>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">에바연 자료는 어떤 학생에게 적합한가요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">학생부종합전형을 준비하는 고1~고3 학생이라면 누구나 활용할 수 있습니다. 특히 탐구 주제를 정하기 어려운 학생, 세특 방향을 잡고 싶은 학생, 교과와 진로를 연결하고 싶은 학생에게 적합합니다.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">탐구활동 자료 300종은 어떻게 구성되어 있나요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">인문, 사회, 의약, 자연과학, 공학, 교육, 예체능 등 진로 계열별로 분류되어 있으며, 각 자료는 8가지 구조(주제 개요, 이론 배경, 연구 방법, 분석 예시, 심화 주제, 참고문헌, 예시 보고서, 학생부 기재 방향)를 포함합니다.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">도서 자료는 무료인가요? 어떻게 받을 수 있나요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">네, 도서 자료는 무료로 제공됩니다. 에바연 쇼핑몰(educereedu.com)에서 회원가입 후 바로 다운로드하실 수 있습니다.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">생기부 분석 서비스는 언제 신청하는 게 좋나요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">1학년부터 3학년까지 언제든 신청 가능합니다. 다만 고1~고2 시기에 미리 분석받으면 남은 기간 동안 전략적으로 학생부를 보완할 수 있어 더 효과적입니다.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">교과세특 설계는 선생님과의 관계에서 활용할 수 있나요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">네, 교과세특 설계 자료는 수업 시간의 탐구활동을 구체적으로 계획하는 데 활용할 수 있습니다. 이를 바탕으로 선생님과 탐구 방향을 상의하시면 더 풍부한 세특 기록이 가능합니다.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">학종 외에 교과전형이나 논술 준비에도 도움이 되나요?<span class="faq-toggle">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">탐구활동 자료 자체가 교과 내용을 깊이 이해하도록 설계되어 있어, 교과전형 내신 대비나 논술 준비에도 간접적으로 도움이 됩니다.</div></div>
-      </div>
+      <div class="faq-item"><button class="faq-question">에바연 자료는 어떤 학생에게 적합한가요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">학생부종합전형을 준비하는 고1~고3 학생이라면 누구나 활용할 수 있습니다. 특히 탐구 주제를 정하기 어려운 학생, 세특 방향을 잡고 싶은 학생, 교과와 진로를 연결하고 싶은 학생에게 적합합니다.</div></div></div>
+      <div class="faq-item"><button class="faq-question">탐구활동 자료 300종은 어떻게 구성되어 있나요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">인문, 사회, 의약, 자연과학, 공학, 교육, 예체능 등 진로 계열별로 분류되어 있으며, 각 자료는 8가지 구조(주제 개요, 이론 배경, 연구 방법, 분석 예시, 심화 주제, 참고문헌, 예시 보고서, 학생부 기재 방향)를 포함합니다.</div></div></div>
+      <div class="faq-item"><button class="faq-question">도서 자료는 무료인가요? 어떻게 받을 수 있나요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">네, 도서 자료는 무료로 제공됩니다. 에바연 쇼핑몰(educereedu.com)에서 회원가입 후 바로 다운로드하실 수 있습니다.</div></div></div>
+      <div class="faq-item"><button class="faq-question">생기부 분석 서비스는 언제 신청하는 게 좋나요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">1학년부터 3학년까지 언제든 신청 가능합니다. 다만 고1~고2 시기에 미리 분석받으면 남은 기간 동안 전략적으로 학생부를 보완할 수 있어 더 효과적입니다.</div></div></div>
+      <div class="faq-item"><button class="faq-question">교과세특 설계는 선생님과의 관계에서 활용할 수 있나요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">네, 교과세특 설계 자료는 수업 시간의 탐구활동을 구체적으로 계획하는 데 활용할 수 있습니다. 이를 바탕으로 선생님과 탐구 방향을 상의하시면 더 풍부한 세특 기록이 가능합니다.</div></div></div>
+      <div class="faq-item"><button class="faq-question">학종 외에 교과전형이나 논술 준비에도 도움이 되나요?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">탐구활동 자료 자체가 교과 내용을 깊이 이해하도록 설계되어 있어, 교과전형 내신 대비나 논술 준비에도 간접적으로 도움이 됩니다.</div></div></div>
     </div>
   </div>
 </section>
@@ -957,42 +809,20 @@ body {
   </div>
 </footer>
 
-<!-- FLOATING CTA -->
+<!-- FLOATING -->
 <div class="floating-cta">
   <a href="https://pf.kakao.com/_qxnkUn" class="floating-btn kakao" target="_blank">&#128172; 카카오 상담</a>
   <a href="https://www.educereedu.com" class="floating-btn shop" target="_blank">자료 보러가기 &#8594;</a>
 </div>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// FAQ
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const wasActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!wasActive) item.classList.add('active');
-  });
-});
-
-// Fade in
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+document.querySelectorAll('.faq-question').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement;const w=i.classList.contains('active');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('active'));if(!w)i.classList.add('active')})});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+document.querySelector('.nav-mobile-toggle').addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('show')});
 </script>
 
 </body>
